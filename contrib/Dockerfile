@@ -8,6 +8,7 @@
 # - Server: docker run -p 5201:5201 -it iperf3 -s
 # - Client: docker run -it iperf3 -c 192.168.1.1 (note: since this is a minimal image and does not include DNS, name resolution will not work)
 FROM scratch
+EXPOSE 5201
 COPY src/iperf3 /iperf3
 COPY tmp /tmp
 ENTRYPOINT ["/iperf3"]
